@@ -3,7 +3,7 @@
 // class OpenAIService {
 //   final Dio _dio = Dio();
 //   final String _apiKey =
-//       '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'; // Securely store your API key
+//       ''; // Securely store your API key
 //   final String _baseUrl = 'https://api.openai.com/v1/chat/completions';
 
 //   Future<String> processConversation(String conversation) async {
