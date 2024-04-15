@@ -23,7 +23,7 @@ class OpenAIService {
             {
               "role": "user",
               "content":
-                  "Summarize the following conversation and provide recommended actions. Your output should be in valid JSON format, using double quotes for keys and values, and escaping necessary characters. The format should be as follows: {\"summary\": \"<summary content>\", \"actions\": \"<recommended actions go here>\"}\n\n$conversation"
+                  "Please provide a detailed summary of the following conversation, highlighting the key points and main topics discussed. Additionally, suggest a list of recommended actions based on the discussion. Present the actions as a numbered list to clarify the sequence of steps that should be taken.The format should be as follows: {\"summary\": \"<summary content>\", \"actions\": \"<recommended actions go here>\"}\n\n$conversation"
             }
           ]
         },
