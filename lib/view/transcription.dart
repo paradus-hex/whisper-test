@@ -2,8 +2,15 @@ import 'package:flutter/material.dart';
 
 class TranscriptionScreen extends StatelessWidget {
   final String transcript;
+  final String summary;
+  final String recommendedActions;
 
-  const TranscriptionScreen({super.key, required this.transcript});
+  const TranscriptionScreen({
+    super.key,
+    required this.transcript,
+    required this.summary,
+    required this.recommendedActions,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -22,10 +29,9 @@ class TranscriptionScreen extends StatelessWidget {
         ),
         body: TabBarView(
           children: [
-            // Each tab content goes here:
             TranscriptTab(transcript: transcript),
-            SummaryTab(transcript: transcript),
-            RecommendedActionsTab(transcript: transcript),
+            SummaryTab(summary: summary),
+            RecommendedActionsTab(recommendedActions: recommendedActions),
           ],
         ),
       ),
@@ -48,25 +54,30 @@ class TranscriptTab extends StatelessWidget {
 }
 
 class SummaryTab extends StatelessWidget {
-  final String transcript;
+  final String summary;
 
-  const SummaryTab({Key? key, required this.transcript}) : super(key: key);
+  const SummaryTab({Key? key, required this.summary}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    // Placeholder for summary content
-    return const Center(child: Text("Summary content goes here"));
+    return SingleChildScrollView(
+      padding: EdgeInsets.all(16),
+      child: Text(summary, style: TextStyle(fontSize: 16)),
+    );
   }
 }
 
 class RecommendedActionsTab extends StatelessWidget {
-  final String transcript;
+  final String recommendedActions;
 
-  const RecommendedActionsTab({super.key, required this.transcript});
+  const RecommendedActionsTab({Key? key, required this.recommendedActions})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    // Placeholder for recommended actions content
-    return const Center(child: Text("Recommended actions content goes here"));
+    return SingleChildScrollView(
+      padding: EdgeInsets.all(16),
+      child: Text(recommendedActions, style: TextStyle(fontSize: 16)),
+    );
   }
 }

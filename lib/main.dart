@@ -71,10 +71,20 @@ class _MyAppState extends State<MyApp> {
         String transcript =
             data['results']['channels'][0]['alternatives'][0]['transcript'];
 
-        // Navigate to TranscriptionScreen and wait for it to pop.
+        var openai = OpenAIService();
+
+        var decoded = await openai.processConversation(transcript);
+
+        String summary = decoded['summary'];
+        String actions = decoded['actions'];
+
         await Navigator.of(context).push(
           MaterialPageRoute(
-            builder: (context) => TranscriptionScreen(transcript: transcript),
+            builder: (context) => TranscriptionScreen(
+              transcript: transcript,
+              summary: summary,
+              recommendedActions: actions,
+            ),
           ),
         );
 
