@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
-import 'package:flutter_application_1/transcription.dart';
+import 'package:flutter_application_1/view/transcription.dart';
 import 'package:flutter_application_1/viewModel/gptCalling.dart';
 import 'package:flutter_sound/flutter_sound.dart';
 import 'package:path_provider/path_provider.dart';
