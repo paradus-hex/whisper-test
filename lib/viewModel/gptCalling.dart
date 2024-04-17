@@ -3,8 +3,7 @@ import 'dart:convert';
 
 class OpenAIService {
   final Dio _dio = Dio();
-  final String _apiKey =
-      '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'; // Securely store your API key
+  final String _apiKey = ''; // Securely store your API key
   final String _baseUrl = 'https://api.openai.com/v1/chat/completions';
 
   Future<dynamic> processConversation(String conversation) async {
